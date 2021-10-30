@@ -4,7 +4,7 @@ void output(const int value)
 {
     int tmp = 28;
     while (tmp >= 0) {
-        printf("%x", (value » tmp) & 0xF);
+        printf("%x", (value >> tmp) & 0xF);
         tmp -= 4;
     }
     printf("\n");
