@@ -103,6 +103,7 @@ int main()
     printf("Which task you wanna test:\n");
     printf("\t1) Byte shift\n");
     printf("\t2) Array tasks\n");
+    printf("\t3) Ptr byte change\n");
     printf("Enter number of test\n> ");
     scanf("%d", &task);
     if (task == 1) {
@@ -121,6 +122,14 @@ int main()
         array_third_task();
         printf("Fourth task\n\n");
         array_fourth_task();
+    } else if (task == 3) {
+        int a = 270533154;
+        char *ptr= &a;
+        printf("%d\n", a);
+        printf("%d|%d|%d|%d\n", *ptr, *(ptr + 1), *(ptr + 2), *(ptr + 3));
+        *(ptr + 2) = 5;
+        printf("%d\n", a);
+        printf("%d|%d|%d|%d\n", *ptr, *(ptr + 1), *(ptr + 2), *(ptr + 3));
     } else {
         printf("Wrong number of test\n");
     }
