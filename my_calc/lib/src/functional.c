@@ -3,21 +3,22 @@
 
 int addition(const int a, const int b)
 {
-    return a + b;
+	return a + b;
 }
 int substraction(const int a, const int b)
 {
-    return a - b;
+	return a - b;
 }
 int multiplication(const int a, const int b)
 {
-    return a * b;
+	return a * b;
 }
-double division(const int a, const int b)
+double division(const double a, const double b)
 {
-    if (b == 0) {
-        printf("Zero delition");
-        return 0;
-    }
-    return a / b;
+	if (b == 0)
+	{
+		printf("Zero delition");
+		return 0;
+	}
+	return a / b;
 }
