@@ -1,4 +1,4 @@
-#include "../lib/include/functional.h"
+#include "../lib/static/include/functional.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -81,6 +81,9 @@ int make_action(int action)
 	}
 	switch (action)
 	{
+	case -1:
+		printf("\nWrong operation number!\n\n");
+		break;
 	case 1:
 		printf("\n%d + %d = %d\n\n", a, b, addition(a, b));
 		break;
@@ -94,15 +97,15 @@ int make_action(int action)
 		printf("\n%d / %d = %.3lf\n\n", a, b, division(a, b));
 		break;
 	case 5:
+		printf("\nSee you later!\n\n");
 		return 1;
 	}
 	return 0;
 }
-
 int main(void)
 {
 	printf("\nMY_CALCULATOR v1.0\n");
-	int status = 1, action = 5;
+	int status = 0;
 	char input[INPUT_SIZE] = "";
 	operations();
 	do
@@ -110,17 +113,7 @@ int main(void)
 		printf("> ");
 		fgets(input, INPUT_SIZE, stdin);
 		input[strlen(input) - 1] = '\0';
-
-		action = get_action(input);
-		if (action == -1)
-		{
-			printf("Wrong operation number!\n");
-		}
-		else if (action > 0)
-		{
-			status = make_action(action);
-		}
+		status = make_action(get_action(input));
 	} while (!status);
-	printf("\nSee you later!\n\n");
 	return 0;
 }
