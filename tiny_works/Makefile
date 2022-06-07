@@ -1,7 +1,7 @@
 CC=gcc
 CFLAGS=-Wall -Werror -Wpedantic -Wextra
 LDFLAGS=-lpthread -lrt
-SOURCE:=$(shell find $(SOURCEDIR) -name '*.c')
+SOURCE:=$(shell find $(SOURCEDIR)src/ -name '*.c')
 OBJECTS:=$(addprefix obj/,$(notdir $(SOURCE:%.c=%.o)))
 TARGETS:=$(addprefix bin/,$(notdir $(SOURCE:%.c=%)))
 HIDE = @
