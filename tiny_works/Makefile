@@ -1,6 +1,6 @@
 CC=gcc
 CFLAGS=-Wall -Werror -Wpedantic -Wextra
-LDFLAGS=-lpthread
+LDFLAGS=-lpthread -lrt
 SOURCE:=$(shell find $(SOURCEDIR) -name '*.c')
 OBJECTS:=$(addprefix obj/,$(notdir $(SOURCE:%.c=%.o)))
 TARGETS:=$(addprefix bin/,$(notdir $(SOURCE:%.c=%)))
